@@ -34,42 +34,10 @@ const Index = () => {
         {/* Header */}
         <Header />
 
-        {/* Statistics Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Card className="text-center">
-            <CardContent className="pt-4">
-              <Users className="w-8 h-8 mx-auto text-primary mb-2" />
-              <div className="text-2xl font-bold">1,250</div>
-              <div className="text-xs text-muted-foreground">Pelanggan Hari Ini</div>
-            </CardContent>
-          </Card>
-          <Card className="text-center">
-            <CardContent className="pt-4">
-              <TrendingUp className="w-8 h-8 mx-auto text-success mb-2" />
-              <div className="text-2xl font-bold">98%</div>
-              <div className="text-xs text-muted-foreground">Tingkat Kepuasan</div>
-            </CardContent>
-          </Card>
-          <Card className="text-center">
-            <CardContent className="pt-4">
-              <Shield className="w-8 h-8 mx-auto text-warning mb-2" />
-              <div className="text-2xl font-bold">24/7</div>
-              <div className="text-xs text-muted-foreground">Info Online</div>
-            </CardContent>
-          </Card>
-          <Card className="text-center">
-            <CardContent className="pt-4">
-              <Info className="w-8 h-8 mx-auto text-primary mb-2" />
-              <div className="text-2xl font-bold">15 Min</div>
-              <div className="text-xs text-muted-foreground">Rata-rata Layanan</div>
-            </CardContent>
-          </Card>
-        </div>
-
         {/* Services Section */}
         <div className="space-y-6">
           <div className="text-center space-y-2">
-            <h2 className="text-2xl font-bold">Pilih Layanan SAMSAT</h2>
+            <h2 className="text-2xl font-bold">Pilih Panduan Layanan SAMSAT</h2>
             <p className="text-muted-foreground">
               Klik pada layanan yang Anda butuhkan untuk mendapatkan panduan lengkap
             </p>
@@ -85,14 +53,60 @@ const Index = () => {
             ))}
           </div>
         </div>
+        {/* Statistics Cards */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <a
+            href="https://sempol.theflavare.com/#/bbnkb"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Card className="text-center cursor-pointer hover:shadow-lg transition">
+              <CardContent className="pt-4">
+                <Users className="w-8 h-8 mx-auto text-primary mb-2" />
+                <div className="text-2xl font-bold">SEMPOL</div>
+                <div className="text-xs text-muted-foreground">
+                  HITUNG JUMLAH PAJAK KENDARAAN ANDA
+                </div>
+              </CardContent>
+            </Card>
+          </a>
 
+          <a
+            href="https://bapenda.jatimprov.go.id/info/pkb"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Card className="text-center cursor-pointer hover:shadow-lg transition">
+              <CardContent className="pt-4">
+                <TrendingUp className="w-8 h-8 mx-auto text-green-600 mb-2" />
+                <div className="text-2xl font-bold">INFO PKB</div>
+                <div className="text-xs text-muted-foreground">Informasi jumlah pajak kendaraan bermotor</div>
+              </CardContent>
+            </Card>
+          </a>
+
+          <a
+            href="https://info.dipendajatim.go.id/index.php?page=info_etbpkp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Card className="text-center cursor-pointer hover:shadow-lg transition">
+              <CardContent className="pt-4">
+                <Shield className="w-8 h-8 mx-auto text-amber-500 mb-2" />
+                <div className="text-2xl font-bold">Cetak E-TBPKP</div>
+                <div className="text-xs text-muted-foreground">zulkifli rambut setengah putih suka Dinda upt</div>
+              </CardContent>
+            </Card>
+          </a>
+
+        </div>
         {/* Information Cards */}
         <div className="grid md:grid-cols-2 gap-6">
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Info className="w-5 h-5" />
-                Informasi Penting
+                Catatan Penting
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -148,7 +162,7 @@ const Index = () => {
         <Card className="mt-8">
           <CardContent className="pt-6 text-center">
             <p className="text-muted-foreground text-sm">
-              © 2024 SAMSAT Digital Service. Melayani dengan sepenuh hati untuk kemudahan Anda.
+              © 2025 SAMSAT Digital Service. Melayani dengan sepenuh hati untuk kemudahan Anda.
             </p>
           </CardContent>
         </Card>

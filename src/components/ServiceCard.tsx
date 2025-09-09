@@ -10,7 +10,7 @@ interface ServiceCardProps {
 
 export const ServiceCard = ({ service, onSelect }: ServiceCardProps) => {
   return (
-    <Card className="h-full hover:shadow-primary transition-smooth cursor-pointer group">
+    <Card className="h-full flex flex-col hover:shadow-primary transition-smooth cursor-pointer group">
       <CardHeader className="text-center">
         <div className="text-4xl mb-2 group-hover:scale-110 transition-smooth">
           {service.icon}
@@ -20,12 +20,14 @@ export const ServiceCard = ({ service, onSelect }: ServiceCardProps) => {
           {service.description}
         </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-4">
+
+      {/* konten fleksibel agar tinggi card seragam */}
+      <CardContent className="flex-1 space-y-4">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Clock className="w-4 h-4" />
           <span>Estimasi: {service.estimatedTime}</span>
         </div>
-        
+
         <div className="space-y-2">
           <div className="flex items-center gap-2 text-sm font-medium">
             <FileText className="w-4 h-4" />
@@ -45,15 +47,18 @@ export const ServiceCard = ({ service, onSelect }: ServiceCardProps) => {
             )}
           </ul>
         </div>
-        
-        <Button 
+      </CardContent>
+
+      {/* tombol dipisah dan ditempatkan selalu di bawah */}
+      <div className="p-4 pt-0">
+        <Button
           onClick={() => onSelect(service)}
           className="w-full gradient-primary hover:shadow-primary"
           size="sm"
         >
           Pilih Layanan
         </Button>
-      </CardContent>
+      </div>
     </Card>
   );
 };
