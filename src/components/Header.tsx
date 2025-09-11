@@ -14,8 +14,8 @@ export const Header = () => {
             alt="Logo Samsat"
             className="h-16 w-auto mx-auto drop-shadow-md mb-2"
           />
-          <h1 className="text-3xl font-bold">SAMSAT BERSAMA SURABAYA BARAT</h1>
-          <p className="text-white/80 text-sm">
+          <h1 className="text-4xl font-bold">KB SAMSAT SURABAYA BARAT</h1>
+          <p className="text-white/300 text-sm">
             Sistem Administrasi Manunggal Satu Atap
           </p>
 

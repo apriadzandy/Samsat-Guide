@@ -18,6 +18,7 @@ export interface SamsatService {
 }
 
 export const samsatServices: SamsatService[] = [
+  //Pajak 1 tahunan
   {
     id: 'perpanjang-pajak 1 tahunan',
     title: 'Perpanjang Pajak Kendaraan 1tahunan ',
@@ -27,7 +28,7 @@ export const samsatServices: SamsatService[] = [
     requirements: [
       'STNK asli dan fotocopy',
       'KTP asli dan fotocopy',
-      'BPKB (jika STNK habis masa berlaku > 1 tahun)',
+      'SURAT KUASA(Bila diwakilkan) Surat Kuasa Bermaterai Cukup dan Fotocopy E-KTP yang diberi kuasa bagi yang mewakilkan (untuk atas nama Perusahaan dan Instansi Wajib Dengan Surat Kuasa)',
       'Kendaraan untuk cek fisik'
     ],
     steps: [
@@ -41,38 +42,359 @@ export const samsatServices: SamsatService[] = [
       },
       {
         id: 2,
+        title: 'PENETAPAN PKB DAN SWDKLLJ',
+        description: 'Penetapan jumlah pajak yang harus dibayar (Menunggu panggilan kasir)',
+        location: 'Loket Penetapan ',
+        isCompleted: false,
+        action: 'tax_assessment'
+
+      },
+      {
+        id: 3,
+        title: 'Pembayaran',
+        description: 'Lakukan pembayaran pajak dan biaya administrasi',
+        location: 'Kasir 1 & 2 (Sesuai panggilan)',
+        isCompleted: false,
+        action: 'payment'
+      },
+    ]
+  },
+  //Pajak 5 tahunan
+  {
+    id: 'perpanjangan-stnk-5-tahun',
+    title: 'Perpanjangan STNK 5 Tahun',
+    description: 'Alur registrasi perpanjangan STNK setiap 5 tahun sekali',
+    icon: '📄',
+    estimatedTime: '60-90 menit',
+    requirements: [
+      'IDENTITAS PEMILIK: KTP asli dan fotocopy',
+      'SURAT KUASA(Bila diwakilkan)' ,
+      'BPKB asli dan fotocopy',
+      'STNK asli dan fotocopy',
+      'HASIL PEMERIKSAAN CEK FISIK (Noka/Nosin)',
+    ],
+    steps: [
+      {
+        id: 1,
+        title: 'Pengecekan Persyaratan',
+        description: 'Memeriksa kelengkapan berkas yang dibawa',
+        location: 'Loket Pengecekan Persyaratan',
+        isCompleted: false,
+        action: 'check_requirements'
+      },
+      {
+        id: 2,
+        title: 'Pengambilan Antrian MTC',
+        description: 'Mengambil nomor antrian pelayanan',
+        location: 'Loket Antrian MTC',
+        isCompleted: false,
+        action: 'take_queue'
+      },
+      {
+        id: 3,
+        title: 'Loket Formulir',
+        description: 'Mengisi dan menyerahkan formulir perpanjangan',
+        location: 'Loket Formulir',
+        isCompleted: false,
+        action: 'submit_form'
+      },
+      {
+        id: 4,
         title: 'Cek Fisik Kendaraan',
-        description: 'Lakukan pemeriksaan fisik kendaraan dan kelengkapan dokumen',
-        location: 'Loket Cek Fisik (Sebelah Kanan)',
+        description: 'Petugas melakukan pemeriksaan fisik kendaraan',
+        location: 'Area Cek Fisik',
         isCompleted: false,
         action: 'physical_check'
       },
       {
-        id: 3,
-        title: 'Penyerahan Berkas',
-        description: 'Serahkan berkas persyaratan yang sudah lengkap',
-        location: 'Loket A (Penyerahan Berkas)',
+        id: 5,
+        title: 'Pengesahan Cek Fisik',
+        description: 'Hasil cek fisik kendaraan disahkan',
+        location: 'Loket Pengesahan Cek Fisik',
         isCompleted: false,
-        action: 'submit_documents'
+        action: 'validate_check'
       },
       {
-        id: 4,
+        id: 6,
+        title: 'Verifikasi',
+        description: 'Petugas melakukan verifikasi data dan dokumen',
+        location: 'Loket Verifikasi',
+        isCompleted: false,
+        action: 'verification'
+      },
+      {
+        id: 7,
+        title: 'Pengecekan Status Kendaraan',
+        description: 'Pemeriksaan status kendaraan di sistem',
+        location: 'Loket Pengecekan Status',
+        isCompleted: false,
+        action: 'status_check'
+      },
+      {
+        id: 8,
+        title: 'Pendaftaran',
+        description: 'Melakukan pendaftaran perpanjangan STNK',
+        location: 'Loket Pendaftaran',
+        isCompleted: false,
+        action: 'register'
+      },
+      {
+        id: 9,
+        title: 'Penetapan PKB dan SWDKLLJ',
+        description: 'Menetapkan jumlah pajak kendaraan bermotor dan SWDKLLJ',
+        location: 'Loket Penetapan',
+        isCompleted: false,
+        action: 'tax_determination'
+      },
+      {
+        id: 10,
         title: 'Pembayaran',
-        description: 'Lakukan pembayaran pajak dan biaya administrasi',
-        location: 'Kasir B (Pembayaran)',
+        description: 'Membayar PKB, SWDKLLJ, dan PNBP',
+        location: 'Kasir',
         isCompleted: false,
         action: 'payment'
       },
       {
-        id: 5,
-        title: 'Pengambilan STNK',
-        description: 'Ambil STNK baru yang sudah diperpanjang',
-        location: 'Loket Pengambilan',
+        id: 11,
+        title: 'Penyerahan STNK dan TNKB',
+        description: 'Mengambil STNK dan pelat nomor baru',
+        location: 'Loket Penyerahan',
         isCompleted: false,
         action: 'pickup'
       }
     ]
   },
+  // Mutasi Keluar
+  {
+    id: 'mutasi-keluar',
+    title: 'Mutasi Keluar (Perubahan Identitas/Pemilik Ranmor)',
+    description: 'Alur registrasi mutasi keluar kendaraan bermotor',
+    icon: '🚗',
+    estimatedTime: '14 (EMPAT BELAS) HARI KERJA',
+    requirements: [
+      'STNK asli',
+      'BPKB asli',
+      'KTP asli dan fotocopy',
+      'Kwitansi Jual Beli Bermaterai',
+      'Surat Permohonan Bermaterai',
+      'Kendaraan'
+    ],
+    steps: [
+      {
+        id: 1,
+        title: 'Pengecekan Persyaratan',
+        description: 'Memeriksa kelengkapan berkas',
+        location: 'Loket Pengecekan Persyaratan',
+        isCompleted: false,
+        action: 'check_requirements'
+      },
+      {
+        id: 2,
+        title: 'Pengambilan Antrian MTC',
+        description: 'Mengambil nomor antrian',
+        location: 'Loket Antrian MTC',
+        isCompleted: false,
+        action: 'take_queue'
+      },
+      {
+        id: 3,
+        title: 'Loket Formulir',
+        description: 'Mengisi dan menyerahkan formulir mutasi keluar',
+        location: 'Loket Formulir',
+        isCompleted: false,
+        action: 'submit_form'
+      },
+      {
+        id: 4,
+        title: 'Cek Fisik Kendaraan',
+        description: 'Pemeriksaan fisik kendaraan',
+        location: 'Area Cek Fisik',
+        isCompleted: false,
+        action: 'physical_check'
+      },
+      {
+        id: 5,
+        title: 'Pengesahan Cek Fisik',
+        description: 'Pengesahan hasil cek fisik kendaraan',
+        location: 'Loket Pengesahan Cek Fisik',
+        isCompleted: false,
+        action: 'validate_check'
+      },
+      {
+        id: 6,
+        title: 'Verifikasi',
+        description: 'Verifikasi data dan dokumen',
+        location: 'Loket Verifikasi',
+        isCompleted: false,
+        action: 'verification'
+      },
+      {
+        id: 7,
+        title: 'Pengecekan Status Kendaraan',
+        description: 'Pemeriksaan status kendaraan di sistem',
+        location: 'Loket Pengecekan Status',
+        isCompleted: false,
+        action: 'status_check'
+      },
+      {
+        id: 8,
+        title: 'Pendaftaran Fiskal',
+        description: 'Melakukan pendaftaran fiskal kendaraan',
+        location: 'Loket Pendaftaran Fiskal',
+        isCompleted: false,
+        action: 'fiscal_registration'
+      },
+      {
+        id: 9,
+        title: 'Arsip Berkas',
+        description: 'Mengarsipkan berkas-berkas mutasi',
+        location: 'Loket Arsip Berkas',
+        isCompleted: false,
+        action: 'archive_documents'
+      },
+      {
+        id: 10,
+        title: 'Registrasi Mutasi Keluar',
+        description: 'Registrasi mutasi keluar di gudang berkas',
+        location: 'Loket Registrasi Mutasi Keluar',
+        isCompleted: false,
+        action: 'mutation_registration'
+      },
+      {
+        id: 11,
+        title: 'Pembayaran',
+        description: 'Melakukan pembayaran biaya mutasi',
+        location: 'Kasir Lantai 1',
+        isCompleted: false,
+        action: 'payment'
+      },
+      {
+        id: 12,
+        title: 'Loket Mutasi Keluar',
+        description: 'Pengambilan dokumen mutasi keluar',
+        location: 'Loket Mutasi Keluar',
+        isCompleted: false,
+        action: 'pickup'
+      }
+    ]
+  },
+
+  // BBN / Mutasi Masuk
+  {
+  id: 'bbn-mutasi-masuk',
+  title: 'Perubahan Identitas/Pemilik Ranmor (BBN / Mutasi Masuk)',
+  description: 'Alur registrasi BBN / mutasi masuk kendaraan bermotor',
+  icon: '🧾',
+  estimatedTime: '90-150 menit',
+  requirements: [
+    'STNK asli',
+    'BPKB asli',
+    'KTP pemilik baru (asli & fotokopi)',
+    'Kwitansi jual beli bermaterai',
+    'Hasil cek fisik kendaraan',
+    'Surat permohonan bermaterai',
+    'Kendaraan'
+  ],
+  steps: [
+    {
+      id: 1,
+      title: 'Pengecekan Persyaratan',
+      description: 'Pemeriksaan kelengkapan berkas',
+      location: 'Loket Pengecekan Persyaratan',
+      isCompleted: false,
+      action: 'check_requirements'
+    },
+    {
+      id: 2,
+      title: 'Pengambilan Antrian MTC',
+      description: 'Mengambil nomor antrian pelayanan',
+      location: 'Loket Antrian MTC',
+      isCompleted: false,
+      action: 'take_queue'
+    },
+    {
+      id: 3,
+      title: 'Loket Formulir',
+      description: 'Mengisi dan menyerahkan formulir BBN/Mutasi Masuk',
+      location: 'Loket Formulir',
+      isCompleted: false,
+      action: 'submit_form'
+    },
+    {
+      id: 4,
+      title: 'Cek Fisik Kendaraan',
+      description: 'Pemeriksaan fisik kendaraan',
+      location: 'Area Cek Fisik',
+      isCompleted: false,
+      action: 'physical_check'
+    },
+    {
+      id: 5,
+      title: 'Loket Pengesahan Cek Fisik',
+      description: 'Pengesahan hasil cek fisik',
+      location: 'Loket Pengesahan Cek Fisik',
+      isCompleted: false,
+      action: 'validate_check'
+    },
+    {
+      id: 6,
+      title: 'Loket Verifikasi',
+      description: 'Verifikasi data dan dokumen',
+      location: 'Loket Verifikasi',
+      isCompleted: false,
+      action: 'verification'
+    },
+    {
+      id: 7,
+      title: 'Pengecekan Status Kendaraan',
+      description: 'Pengecekan status kendaraan pada sistem',
+      location: 'Loket Pengecekan Status',
+      isCompleted: false,
+      action: 'status_check'
+    },
+    {
+      id: 8,
+      title: 'Pendaftaran',
+      description: 'Pendaftaran proses BBN/Mutasi Masuk',
+      location: 'Loket 1',
+      isCompleted: false,
+      action: 'register'
+    },
+    {
+      id: 9,
+      title: 'Proses Progresif R4 Pribadi & Double Cabin',
+      description: 'Perhitungan/proses pajak progresif (jika berlaku)',
+      location: 'Loket 1',
+      isCompleted: false,
+      action: 'progressive_tax'
+    },
+    {
+      id: 10,
+      title: 'Penetapan PKB dan SWDKLLJ',
+      description: 'Penetapan nilai PKB dan SWDKLLJ',
+      location: 'Loket 1',
+      isCompleted: false,
+      action: 'tax_determination'
+    },
+    {
+      id: 11,
+      title: 'Pembayaran',
+      description: 'Pembayaran PKB, SWDKLLJ, dan PNBP',
+      location: 'Loket 2 / Kasir',
+      isCompleted: false,
+      action: 'payment'
+    },
+    {
+      id: 12,
+      title: 'Penyerahan STNK dan TNKB',
+      description: 'Pengambilan STNK dan pelat nomor',
+      location: 'Loket 2 / Penyerahan',
+      isCompleted: false,
+      action: 'pickup'
+    }
+  ]
+},
+
   {
     id: 'balik-nama',
     title: 'Balik Nama Kendaraan',
@@ -137,117 +459,79 @@ export const samsatServices: SamsatService[] = [
       }
     ]
   },
-  {
-    id: 'ganti-nopol',
-    title: 'Ganti Nomor Polisi',
-    description: 'Penggantian plat nomor kendaraan bermotor',
-    icon: '🔢',
-    estimatedTime: '45-60 menit',
-    requirements: [
-      'STNK asli',
-      'BPKB asli',
-      'KTP asli dan fotocopy',
-      'Plat nomor lama',
-      'Kendaraan'
-    ],
-    steps: [
-      {
-        id: 1,
-        title: 'Pendaftaran',
-        description: 'Daftar untuk penggantian nomor polisi',
-        location: 'Loket Pendaftaran',
-        isCompleted: false,
-        action: 'register'
-      },
-      {
-        id: 2,
-        title: 'Pilih Nomor',
-        description: 'Pilih nomor polisi yang tersedia',
-        location: 'Loket Pemilihan Nomor',
-        isCompleted: false,
-        action: 'choose_number'
-      },
-      {
-        id: 3,
-        title: 'Cek Fisik',
-        description: 'Pemeriksaan fisik kendaraan',
-        location: 'Area Cek Fisik',
-        isCompleted: false,
-        action: 'physical_check'
-      },
-      {
-        id: 4,
-        title: 'Pembayaran',
-        description: 'Bayar biaya ganti plat dan administrasi',
-        location: 'Kasir',
-        isCompleted: false,
-        action: 'payment'
-      },
-      {
-        id: 5,
-        title: 'Pengambilan',
-        description: 'Ambil STNK baru dan plat nomor',
-        location: 'Loket Pengambilan',
-        isCompleted: false,
-        action: 'pickup'
-      }
-    ]
-  },
-  {
-    id: 'stnk-hilang',
-    title: 'STNK Hilang',
-    description: 'Penerbitan STNK pengganti karena hilang/rusak',
-    icon: '📄',
-    estimatedTime: '30-45 menit',
-    requirements: [
-      'BPKB asli',
-      'KTP asli dan fotocopy',
-      'Surat kehilangan dari Polsek',
-      'Kendaraan untuk cek fisik'
-    ],
-    steps: [
-      {
-        id: 1,
-        title: 'Pendaftaran',
-        description: 'Daftar dengan membawa surat kehilangan',
-        location: 'Loket Pendaftaran',
-        isCompleted: false,
-        action: 'register'
-      },
-      {
-        id: 2,
-        title: 'Verifikasi BPKB',
-        description: 'Verifikasi keaslian BPKB',
-        location: 'Loket Verifikasi',
-        isCompleted: false,
-        action: 'verify_bpkb'
-      },
-      {
-        id: 3,
-        title: 'Cek Fisik',
-        description: 'Pemeriksaan fisik kendaraan',
-        location: 'Area Cek Fisik',
-        isCompleted: false,
-        action: 'physical_check'
-      },
-      {
-        id: 4,
-        title: 'Pembayaran',
-        description: 'Bayar biaya penerbitan STNK baru',
-        location: 'Kasir',
-        isCompleted: false,
-        action: 'payment'
-      },
-      {
-        id: 5,
-        title: 'Pengambilan STNK',
-        description: 'Ambil STNK pengganti',
-        location: 'Loket Pengambilan',
-        isCompleted: false,
-        action: 'pickup'
-      }
-    ]
-  },
+{
+  id: 'stnk-hilang-rusak',
+  title: 'Permohonan STNK Hilang atau Rusak',
+  description: 'Alur registrasi penggantian STNK yang hilang atau rusak',
+  icon: '🪪',
+  estimatedTime: '60-90 menit',
+  requirements: [
+    'E-KTP (WNI) atas nama STNK',
+    'Kartu Izin Tinggal Tetap/Sementara (WNA)',
+    'Surat Keterangan Badan Hukum (Kop Surat, tanda tangan pimpinan, stempel)',
+    'Izin Usaha/Trayek (jika angkutan barang)',
+    'Surat Domisili Perusahaan',
+    'NIB',
+    'NPWP',
+    'Akta Perusahaan',
+    'Surat Keterangan Instansi (Kop Surat, tanda tangan pimpinan, stempel)',
+    'E-KTP yang dikuasakan',
+    'Surat Domisili Instansi',
+    'Surat Kuasa bermaterai cukup + fotokopi E-KTP penerima kuasa',
+    'E-KTP asli penerima kuasa',
+    'Surat tanda penerimaan laporan Polri & berita pemeriksaan penyidik (Polsek/Polres/Polda)',
+    'Nota Dinas Rekon STNK/BPKB Duplikat (Gedung RTMC Polda)',
+    'STNK asli (jika rusak)',
+    'Surat pernyataan bermaterai (BPKB/STNK hilang tidak terkait pidana/perdata)',
+    'Bukti pengumuman & kwitansi media cetak (1 lokal + 1 kota)',
+    'Surat turunan pajak / bukti lunas pajak / leges (Samsat)',
+    'Surat pernyataan pemohon',
+    'Tanda bukti pembayaran PNBP'
+  ],
+  steps: [
+    {
+      id: 1,
+      title: 'Pendaftaran',
+      description: 'Mengajukan permohonan penggantian STNK hilang/rusak',
+      location: 'Loket Pendaftaran',
+      isCompleted: false,
+      action: 'register'
+    },
+    {
+      id: 2,
+      title: 'Cek Fisik Kendaraan',
+      description: 'Melakukan pemeriksaan fisik kendaraan',
+      location: 'Area Cek Fisik',
+      isCompleted: false,
+      action: 'physical_check'
+    },
+    {
+      id: 3,
+      title: 'Verifikasi Dokumen',
+      description: 'Memeriksa dan mencocokkan dokumen persyaratan',
+      location: 'Loket Verifikasi',
+      isCompleted: false,
+      action: 'verification'
+    },
+    {
+      id: 4,
+      title: 'Pembayaran',
+      description: 'Melakukan pembayaran biaya administrasi',
+      location: 'Kasir',
+      isCompleted: false,
+      action: 'payment'
+    },
+    {
+      id: 5,
+      title: 'Penyerahan STNK',
+      description: 'Mengambil STNK pengganti (baru)',
+      location: 'Loket Penyerahan',
+      isCompleted: false,
+      action: 'pickup'
+    }
+  ]
+},
+
   
    {
   id: 'Blokir',
@@ -377,99 +661,6 @@ export const samsatServices: SamsatService[] = [
       title: 'Pengambilan TNKB',
       description: 'Ambil plat nomor (TNKB) dan selesai.',
       location: 'Loket TNKB/Pengambilan',
-      isCompleted: false,
-      action: 'pickup'
-    }
-  ]
-},
-{
-  id: 'MutasiKeluar',
-  title: 'Mutasi Keluar',
-  description: 'Registrasi perubahan identitas/pemilik kendaraan untuk pindah Samsat asal ke tujuan (mutasi keluar daerah).',
-  icon: '📤',
-  estimatedTime: '14 hari kerja',
-  requirements: [
-    'E-KTP (WNI) atau KITAP/KITAS (WNA)',
-    'Surat Kuasa bermeterai + fotokopi KTP penerima kuasa (jika diwakilkan)',
-    'BPKB asli & fotokopi',
-    'STNK asli & fotokopi',
-    'Bukti pemindahtanganan kepemilikan (jual beli/waris/lelang/hibah/dll sesuai kasus)',
-    'Surat Mutasi Keluar: Pengantar Mutasi, Surat Keterangan Fiskal, bukti pembayaran PNBP',
-    'Surat Keterangan Badan Hukum, Akta Perusahaan, NPWP, NIB, Domisili (untuk badan usaha)',
-    'Dokumen tambahan untuk plat kuning/angkutan umum (NIB, sertifikat standar, izin trayek, rekomendasi Dishub)',
-    'Hasil cek fisik kendaraan & blangko cek fisik (Noka/Nosin)',
-    'Formulir permohonan registrasi mutasi keluar'
-  ],
-  steps: [
-    {
-      id: 1,
-      title: 'Pengambilan Formulir',
-      description: 'Ambil formulir & nomor antrian untuk mutasi keluar.',
-      location: 'Loket Formulir',
-      isCompleted: false,
-      action: 'register'
-    },
-    {
-      id: 2,
-      title: 'Cek Fisik',
-      description: 'Lakukan pemeriksaan fisik kendaraan (gesek nomor rangka & mesin).',
-      location: 'Area Cek Fisik',
-      isCompleted: false,
-      action: 'physical_check'
-    },
-    {
-      id: 3,
-      title: 'Pengesahan Cek Fisik',
-      description: 'Sahkan hasil cek fisik kendaraan.',
-      location: 'Loket Pengesahan',
-      isCompleted: false,
-      action: 'verify_documents'
-    },
-    {
-      id: 4,
-      title: 'Pengecekan Status Kendaraan',
-      description: 'Petugas memeriksa status kendaraan di database.',
-      location: 'Loket Verifikasi/Back Office',
-      isCompleted: false,
-      action: 'verify_documents'
-    },
-    {
-      id: 5,
-      title: 'Pengecekan Persyaratan',
-      description: 'Periksa kelengkapan berkas & dokumen sesuai ketentuan.',
-      location: 'Loket Verifikasi',
-      isCompleted: false,
-      action: 'verify_documents'
-    },
-    {
-      id: 6,
-      title: 'Pendaftaran Fiskal',
-      description: 'Registrasi fiskal kendaraan untuk mutasi keluar.',
-      location: 'Loket Pendaftaran Fiskal',
-      isCompleted: false,
-      action: 'tax_assessment'
-    },
-    {
-      id: 7,
-      title: 'Pembayaran',
-      description: 'Bayar biaya administrasi mutasi keluar di kasir.',
-      location: 'Kasir Lantai 1',
-      isCompleted: false,
-      action: 'payment'
-    },
-    {
-      id: 8,
-      title: 'Arsip Berkas',
-      description: 'Berkas dimasukkan ke arsip Samsat.',
-      location: 'Loket Arsip',
-      isCompleted: false,
-      action: 'archive'
-    },
-    {
-      id: 9,
-      title: 'Mutasi Keluar',
-      description: 'Penerbitan Surat Mutasi Keluar untuk dibawa ke Samsat tujuan.',
-      location: 'Loket Mutasi Keluar',
       isCompleted: false,
       action: 'pickup'
     }

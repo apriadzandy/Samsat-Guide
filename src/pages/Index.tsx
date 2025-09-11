@@ -53,8 +53,15 @@ const Index = () => {
             ))}
           </div>
         </div>
+        <div className="text-left space-y-2">
+            <h2 className="text-2xl font-bold">Layanan Tambahan</h2>
+            <p className="text-muted-foreground">
+              Klik pada layanan yang anda butuhkan
+            </p>
+          </div>
         {/* Statistics Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          
           <a
             href="https://sempol.theflavare.com/#/bbnkb"
             target="_blank"
@@ -125,7 +132,7 @@ const Index = () => {
               <div className="space-y-2">
                 <Badge className="w-fit">Info</Badge>
                 <p className="text-sm">
-                  Pembayaran dapat dilakukan tunai, debit, atau transfer ke rekening resmi.
+                  Pembayaran dapat dilakukan tunai atau debit.
                 </p>
               </div>
             </CardContent>
@@ -140,12 +147,12 @@ const Index = () => {
                 <div>
                   <div className="font-medium">Hari Kerja</div>
                   <div className="text-muted-foreground">Senin - Jumat</div>
-                  <div className="text-primary font-medium">08:00 - 16:00</div>
+                  <div className="text-primary font-medium">08:00 - 13.000</div>
                 </div>
                 <div>
                   <div className="font-medium">Sabtu</div>
                   <div className="text-muted-foreground">Layanan Terbatas</div>
-                  <div className="text-primary font-medium">08:00 - 12:00</div>
+                  <div className="text-primary font-medium">08:00 - 11:00</div>
                 </div>
               </div>
               <div className="border-t pt-3">
