@@ -32,12 +32,12 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 space-y-8">
         {/* Header */}
-        <Header />
+        
 
         {/* Services Section */}
         <div className="space-y-6">
           <div className="text-center space-y-2">
-            <h2 className="text-2xl font-bold">Pilih Panduan Layanan SAMSAT</h2>
+            <h2 className="text-2xl font-bold">Pilih Panduan Layanan SAMSAT yang Anda Butuhkan</h2>
             <p className="text-muted-foreground">
               Klik pada layanan yang Anda butuhkan untuk mendapatkan panduan lengkap
             </p>

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import {  Instagram, Youtube } from "lucide-react";
 import samsatLogo from "@/assets/samsat-logo.png";
 import samsatBuilding from "@/assets/image.png";
 
@@ -53,16 +53,10 @@ const Welcome = () => {
             © 2025 SAMSAT Digital Service – Surabaya Barat
           </p>
           <div className="flex gap-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <Facebook className="w-6 h-6 hover:text-blue-500 transition" />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/samsatsbybarat?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
               <Instagram className="w-6 h-6 hover:text-pink-500 transition" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <Twitter className="w-6 h-6 hover:text-sky-400 transition" />
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/@samsatsurabayabarat9966/featured" target="_blank" rel="noopener noreferrer">
               <Youtube className="w-6 h-6 hover:text-red-500 transition" />
             </a>
           </div>
