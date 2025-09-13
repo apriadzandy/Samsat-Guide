@@ -101,7 +101,7 @@ const Index = () => {
               <CardContent className="pt-4">
                 <Shield className="w-8 h-8 mx-auto text-amber-500 mb-2" />
                 <div className="text-2xl font-bold">Cetak E-TBPKP</div>
-                <div className="text-xs text-muted-foreground">zulkifli rambut setengah putih suka Dinda upt</div>
+                <div className="text-xs text-muted-foreground"></div>
               </CardContent>
             </Card>
           </a>
