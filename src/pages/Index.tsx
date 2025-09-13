@@ -146,11 +146,11 @@ const Index = () => {
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <div className="font-medium">Hari Kerja</div>
-                  <div className="text-muted-foreground">Senin - Jumat</div>
+                  <div className="text-muted-foreground">Senin - Sabtu</div>
                   <div className="text-primary font-medium">08:00 - 13.000</div>
                 </div>
                 <div>
-                  <div className="font-medium">Sabtu</div>
+                  <div className="font-medium">Jumat</div>
                   <div className="text-muted-foreground">Layanan Terbatas</div>
                   <div className="text-primary font-medium">08:00 - 11:00</div>
                 </div>
