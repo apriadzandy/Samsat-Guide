@@ -126,7 +126,7 @@ const Index = () => {
               <div className="space-y-2">
                 <Badge variant="secondary" className="w-fit">Tips</Badge>
                 <p className="text-sm">
-                  Datang lebih awal untuk menghindari antrian panjang, terutama di akhir bulan.
+                  Datang lebih awal untuk menghindari antrian panjang, terutama di Awal bulan.
                 </p>
               </div>
               <div className="space-y-2">
